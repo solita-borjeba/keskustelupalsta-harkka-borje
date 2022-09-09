@@ -1,0 +1,139 @@
+Tämä projektisuunnitelma jaetaan 2 osaan Alkuperäinen ja Toteutunut. 
+Alkuperäinen osio pitää sisällään "suunnitelman" jolla projektia lähdetään toteutamaan. 
+Toteutunut osio pitää sisällään "toteutuneen" osan projektista.
+
+====================================  TOTEUTUNUT  ====================================
+
+
+==================================== ALKUPERÄINEN ====================================
+Plan
+Valitettavasti järjestys on "hiukka" sekava tällä hetkellä. Säätöä tulossa.
+
+Rakenne : Keskustelupalsta
+Functional
+Sisäänkirjautuminen, Etusivu, Aihesivu
+
+	Sisäänkirjautuminen
+Käyttäjä voi kirjautua sisään
+Käyttäjä saa roolin (pääkäyttäjä jne.)
+
+Etusivu
+Näyttää aiheet (nimi, viestien määrä, viimeisimmän viestin aikaleima)
+Aiheet on järjestetty uusimpien viestien aikaleimojen mukaan
+Voi lisätä uuden aiheen
+Voi muuttaa aiheen nimen jos siinä ei ole vielä viestiä
+Voi poistaa aiheen
+poistaa aiheen kaikki viestit
+Optional (Etusivu)
+Vain järjestelmän valvoja voi muokata ja poistaa aiheita
+Viestejä valvotaan, joten “kielletyt” sanat peitetään *** -merkeillä
+Aiheet poistetaan / arkistoidaan jos viimeisestå viestistä on kulunut “mielivaltainen” aika
+
+	Aihesivu
+Näyttää aiheiden nimet ja viestit aikaleiman mukaan järjestettyinä
+Voi lisätä viestin
+Voi muokata omaa viestiä
+	Optional (Aihesivu)
+Saa peukkua ylös kerran viestiä kohden
+
+Non-Functional
+Backend
+käyttää tietokantaa
+käyttöliittymäkohtainen kts. / tutki https://github.com/typicode/json-server
+	Optional (Backend)
+Websocket viestien päivittämiseen
+
+
+Front end
+pakattu build tool avulla
+Taustakohtainen harjoitus voi ohittaa pakkaamisen
+Javascript/Typescript:llä käytä Webpack/Parcel jne.
+Käytetään package manager, kuten npm/yarn
+Muotoiluun käytetään SAAS/LESS jne. korkeamman tason työkalua
+	Optional (Front end)
+Websocket päivitystä varten
+
+
+muu
+GitHub käytetään
+Työnkulku on “optimoitu”
+Hot reloads
+Dev tools käytetään
+
+Backend
+Priva tipsut : 
+pruju : 	luku 4, 10, Spring Boot
+	luku 
+Vaiheet :
+
+Vaihe-1
+Tee “suojaamaton” Spring Boot
+Luo CRUD -toiminnallisuuksien runko. Ensin vain Read toiminto (method get)
+Luo “testi JSON response”
+Luo Frontend
+
+Vaihe-8 
+Logit
+Testaukset (Pruju : luku 5)
+
+Vaihe-10
+Backend suojaaminen Spring Security / JWT (Pruju : luku 5, 14)
+päivitä SecurityConfig.java
+tarkista, että sovellus käynnistyy oikein
+Käynnistä käyttöliittymä
+npm start
+tarkista, että selain käynnistyy osoitteeseen localhost:3000
+Tarkista developer tools -> Network : headers tab -> Status code 401
+Tämä ok, koska käyttöliittymää ei ole todennettu
+Varmista Front end Vaihe-11
+Toista vaiheet 8 & 9
+
+
+
+
+Frontend : React
+Priva tipsut : 
+Pruju : 	luku 9, kolmannen osapuolen komponentit
+	luku 11, kts React “tipsut”
+
+Vaiheet :
+
+Vaihe-2 
+Suunnittele visuaalinen “ulkoasu” eli “create mock-ups -> kynä, paperi tai jokin sovellus (Optional)
+Luo jokaiselle komponentille oma hakemisto src:n alle
+C : oma R : oma jne.	
+Määrittele palvelimen URL vakioksi esmes Constants.js suoraan src kansioon
+
+Vaihe-4
+Pysäytä Nodejs <ctrl> <c>
+Asenna MUI data grid community
+Tuo DataGrid komponentti mukaan sovellukseen
+Käytä DataGridiä
+Toteuta Poisto toiminto (method delete) + Delete -näppäin
+Toteuta Toast -viesti poiston tilasta -> MUI Snackbar
+Toteuta “varmistus” toiminto Deletelle 
+
+Vaihe-5
+Toteuta Lisäys toiminto MUI Dialog komponentti
+
+Vaihe-6
+Toteuta Muokkaa toiminto (method put ) MUI Dialog komponentti
+
+Vaihe-7
+Toteuta CSV MUI GridToolbarContainer, GridToolbarExport komponenteilla
+Button nimi Export
+
+Vaihe-9 
+Säädä buttonit ja tekstialueet halutunlaisiksi
+Luo __test__ kansio Jest testejä varten
+Front end testaaminen (Pruju : luku 13) Jestin avulla
+Tarkista package.json Testing Library Version vs. React version esmes React 18 vaatii Testing Libraryn 13 tahi uudemman 
+Kirjoita testit
+Suorita testit <npm> <test>
+
+Vaihe-11
+Front end suojaaminen JWT (Pruju : luku 14)
+Toteuta login luomalla uusi Login.js komponentti src/components kansioon
+HUOM Kaikille CRUD toiminnoille luotava omat todennusmuutokset
+Toteuta virheilmoitukset, jotka näytetään käyttäjälle jos todennus epäonnistuu
+Toista vaiheet 8 & 9
