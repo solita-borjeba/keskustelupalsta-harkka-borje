@@ -3,6 +3,22 @@ Alkuperäinen osio pitää sisällään "suunnitelman" jolla projektia lähdetä
 Toteutunut osio pitää sisällään "toteutuneen" osan projektista.
 
 ====================================  TOTEUTUNUT  ====================================
+VAIHE-1
+-------
+Tee “suojaamaton” Spring Boot.
+* Git kanssa paljon mystisiä pulmia. Ratkaistu.
+
+Luo CRUD -toiminnallisuuksien runko. Ensin vain Read toiminto (method get)
+* Näyttää aiheet
+* Voi lisätä uuden aiheen
+* Voi muuttaa aiheen nimen
+* Voi poistaa aiheen
+
+Luo “testi JSON response”
+
+====================================  aloitettu  ====================================
+Vaihe-1
+Luo Frontend
 
 
 ==================================== ALKUPERÄINEN ====================================
@@ -66,11 +82,6 @@ pruju : 	luku 4, 10, Spring Boot
 	luku 
 Vaiheet :
 
-Vaihe-1
-Tee “suojaamaton” Spring Boot
-Luo CRUD -toiminnallisuuksien runko. Ensin vain Read toiminto (method get)
-Luo “testi JSON response”
-Luo Frontend
 
 Vaihe-8 
 Logit
