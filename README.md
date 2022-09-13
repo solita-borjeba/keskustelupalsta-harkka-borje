@@ -7,3 +7,4 @@ Backend
 3) Java versio : 16.0.2 
 4) Maven versio : 3.8.6
 5) Spring Boot versio : 2.7.3 jossa Javaksi valittiin versio 11
+6) "Savu testaukseen" käytetty Posmania
