@@ -5,7 +5,7 @@ Toteutunut osio pitää sisällään "toteutuneen" osan projektista.
 ====================================  TOTEUTUNUT  ====================================
 VAIHE-1
 -------
-Tee “suojaamaton” Spring Boot.
+Tee “suojaamaton” Spring Boot -projekti.
 * Git kanssa paljon mystisiä pulmia. Ratkaistu.
 
 Luo CRUD -toiminnallisuuksien runko. Ensin vain Read toiminto (method get)
@@ -16,9 +16,19 @@ Luo CRUD -toiminnallisuuksien runko. Ensin vain Read toiminto (method get)
 
 Luo “testi JSON response”
 
+VAIHE-2
+-------
+Tee "suojaamaton React -projekti.
+* Halutaanko NPM komponentit viedä Gitiin?
+
 ====================================  aloitettu  ====================================
-Vaihe-1
-Luo Frontend
+
+Vaihe-3 
+Suunnittele visuaalinen “ulkoasu” eli “create mock-ups -> kynä, paperi tai jokin sovellus (Optional)
+Luo jokaiselle komponentille oma hakemisto src:n alle
+C : oma R : oma jne.	
+Määrittele palvelimen URL vakioksi esmes Constants.js suoraan src kansioon
+
 
 
 ==================================== ALKUPERÄINEN ====================================
@@ -109,11 +119,7 @@ Pruju : 	luku 9, kolmannen osapuolen komponentit
 
 Vaiheet :
 
-Vaihe-2 
-Suunnittele visuaalinen “ulkoasu” eli “create mock-ups -> kynä, paperi tai jokin sovellus (Optional)
-Luo jokaiselle komponentille oma hakemisto src:n alle
-C : oma R : oma jne.	
-Määrittele palvelimen URL vakioksi esmes Constants.js suoraan src kansioon
+
 
 Vaihe-4
 Pysäytä Nodejs <ctrl> <c>
