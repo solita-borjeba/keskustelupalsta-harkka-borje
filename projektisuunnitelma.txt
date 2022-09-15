@@ -5,7 +5,7 @@ Toteutunut osio pitää sisällään "toteutuneen" osan projektista.
 ====================================  TOTEUTUNUT  ====================================
 VAIHE-1
 -------
-Tee “suojaamaton” Spring Boot.
+Tee “suojaamaton” Spring Boot -projekti.
 * Git kanssa paljon mystisiä pulmia. Ratkaistu.
 
 Luo CRUD -toiminnallisuuksien runko. Ensin vain Read toiminto (method get)
@@ -16,9 +16,36 @@ Luo CRUD -toiminnallisuuksien runko. Ensin vain Read toiminto (method get)
 
 Luo “testi JSON response”
 
+VAIHE-2
+-------
+Tee "suojaamaton React -projekti.
+* Halutaanko NPM komponentit viedä Gitiin? Ei koskaan.
+
+VAIHE-3
+-------
+Suunnittele visuaalinen “ulkoasu” eli “create mock-ups -> kynä, paperi tai jokin sovellus (Optional)
+* Tämä visuaalinen ulkoasu luotiin niin, että koodattiin todelliset "näkymä" komponentit ja otettiin
+copy-paste tuutunäkymästä jossa kaikki luodut komponentit näkyivät samanaikaisesti.
+* komponentit sijoitetaan component kansioon
+* käytetään MUI komponentteja
+
+Määrittele palvelimen URL vakioksi esmes constants.js suoraan src kansioon
+
+VAIHE-4
+-------
+
+
 ====================================  aloitettu  ====================================
-Vaihe-1
-Luo Frontend
+
+Vaihe-4
+Pysäytä Nodejs <ctrl> <c>
+Asenna MUI data grid community
+Tuo DataGrid komponentti mukaan sovellukseen
+Käytä DataGridiä
+Toteuta Poisto toiminto (method delete) + Delete -näppäin
+Toteuta Toast -viesti poiston tilasta -> MUI Snackbar
+Toteuta “varmistus” toiminto Deletelle 
+
 
 
 ==================================== ALKUPERÄINEN ====================================
@@ -109,20 +136,8 @@ Pruju : 	luku 9, kolmannen osapuolen komponentit
 
 Vaiheet :
 
-Vaihe-2 
-Suunnittele visuaalinen “ulkoasu” eli “create mock-ups -> kynä, paperi tai jokin sovellus (Optional)
-Luo jokaiselle komponentille oma hakemisto src:n alle
-C : oma R : oma jne.	
-Määrittele palvelimen URL vakioksi esmes Constants.js suoraan src kansioon
 
-Vaihe-4
-Pysäytä Nodejs <ctrl> <c>
-Asenna MUI data grid community
-Tuo DataGrid komponentti mukaan sovellukseen
-Käytä DataGridiä
-Toteuta Poisto toiminto (method delete) + Delete -näppäin
-Toteuta Toast -viesti poiston tilasta -> MUI Snackbar
-Toteuta “varmistus” toiminto Deletelle 
+
 
 Vaihe-5
 Toteuta Lisäys toiminto MUI Dialog komponentti
