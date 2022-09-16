@@ -29,9 +29,11 @@ public class SubjectController {
 
 
     @PostMapping("/createSubject")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<Object> create(@RequestBody Subject subject) {
 
         try {
+            System.out.println("Perille tuli.");
             Subject createdSubject = service.create(subject);
             return ResponseHandler.generateResponse("Successfully", HttpStatus.OK, createdSubject);
         } catch (Exception e) {
