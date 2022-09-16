@@ -33,6 +33,12 @@ Määrittele palvelimen URL vakioksi esmes constants.js suoraan src kansioon
 
 VAIHE-4
 -------
+Pulmia -> Selvitetty
+* GitHub : siirretty Frontent omaan repoon
+* CORS : yhteyksien muodostus pulma Frontin ja Backin välillä ratkesi, kun CORS sai toimimaan
+
+Uuden subjectin luonti frontille ja päkkärille luotu.
+Uusi get osaa hakea päkkäriltä subjectit ja käsitellä ne. Ulkoasu vielä 'kökkö'.  
 
 
 ====================================  aloitettu  ====================================
