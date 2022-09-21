@@ -21,7 +21,7 @@ public class Subject {
     }
 
     public Subject() {
-        this.id = 99;
+        this.id = 1;
         this.subject = "Test subject";
         this.message = "Test message";
         this.aikaleima = new Date();

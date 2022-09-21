@@ -30,51 +30,57 @@ public class SubjectController {
 
     @PostMapping("/createSubject")
     @CrossOrigin(origins = "http://localhost:3000")
-    public ResponseEntity<Object> create(@RequestBody Subject subject) {
+    public ResponseEntity<Object> createSubject(@RequestBody Subject subject) {
 
         try {
-            System.out.println("Perille tuli.");
-            Subject createdSubject = service.create(subject);
-            return ResponseHandler.generateResponse("Successfully", HttpStatus.OK, createdSubject);
+            System.out.println("Perille tuli Create.");
+            return service.createSubject(subject);
         } catch (Exception e) {
             return ResponseHandler.generateResponse("Nou work", HttpStatus.MULTI_STATUS, null);
         }
     }
-
-    @GetMapping("/getSubject")
-    @CrossOrigin(origins = "http://localhost:3000")
-    public ResponseEntity<Object> getSubject() {
-
-        try {
-            List<Subject> result = service.get();
-            return ResponseHandler.generateResponse("Successfully", HttpStatus.OK, result);
-        } catch (Exception e) {
-            return ResponseHandler.generateResponse("Nou work", HttpStatus.MULTI_STATUS, null);
-        }
-
-
-    }
-
 
     @GetMapping("/getSubjects")
     @CrossOrigin(origins = "http://localhost:3000")
-    /*List<String>*/ TestResponse getSubjects() {
-        return trs.get();
-    }
+    public ResponseEntity<Object> getSubjects() {
 
+        try {
+            System.out.println("Perille tuli GetSubjects."); //OK
+            return service.getSubjects();
+        } catch (Exception e) {
+            return ResponseHandler.generateResponse("Nou work", HttpStatus.MULTI_STATUS, null);
+        }
+
+
+    }
 
     @PostMapping("/addSubject")
     public TestResponse addSubject(/*@RequestBody String subject*/) {
         return /*"AddSubject ei vielä toteutettu."*/ trs.get();
     }
 
-    @PutMapping("putSubject")
-    public String changeSubjectName(@RequestBody String subjectName) {
-        return "Ei vielä toteutettu.";
+    @PutMapping("/updateSubject")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public ResponseEntity<Object> updateSubject(@RequestBody Subject subject) {
+
+        try {
+            System.out.println("Perille tuli Update.");
+            return service.updateSubject(subject);
+        } catch (Exception e) {
+            return ResponseHandler.generateResponse("Nou work", HttpStatus.MULTI_STATUS, null);
+        }
+
     }
 
-    @DeleteMapping("/deleteSubject/{id}")
-    public TestResponse deleteSubject(@PathVariable long id) {
-        return trs.get();
+    @DeleteMapping("/deleteSubject")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public ResponseEntity<Object> deleteSubject(@RequestBody Subject subject) {
+
+        try {
+            System.out.println("Perille tuli Delete.");
+            return service.deleteSubject(subject);
+        } catch (Exception e) {
+            return ResponseHandler.generateResponse("Nou work", HttpStatus.MULTI_STATUS, null);
+        }
     }
 }
