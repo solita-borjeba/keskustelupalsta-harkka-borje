@@ -1,13 +1,25 @@
-package com.harkka.keskustelupalsta.entities;
+package com.harkka.keskustelupalsta.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name ="subjects")
 public class Subject {
-    private int id;
-    private String subject;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @Column(name = "subject")
+    private String subjectname;
+
+    @Column(name = "message")
     private String message;
+
+    @Column(name = "aikaleima")
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date aikaleima;
     private int numberOfMessage;
@@ -21,27 +33,22 @@ public class Subject {
     }
 
     public Subject() {
-        this.id = 1;
-        this.subject = "Test subject";
-        this.message = "Test message";
+    }
+
+    public Subject(String subjectname, String message) {
+    //turha    this.id = 1;
+        this.subjectname = subjectname;
+        this.message = message;
         this.aikaleima = new Date();
         this.numberOfMessage = 99;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
     }
 
     public String getMessage() {
@@ -50,6 +57,14 @@ public class Subject {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getSubjectname() {
+        return subjectname;
+    }
+
+    public void setSubjectname(String subjectname) {
+        this.subjectname = subjectname;
     }
 
     public Date getAikaleima() {

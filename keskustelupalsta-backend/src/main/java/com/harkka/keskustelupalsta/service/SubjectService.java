@@ -1,58 +1,83 @@
 package com.harkka.keskustelupalsta.service;
 
-import com.harkka.keskustelupalsta.entities.Subject;
+import com.harkka.keskustelupalsta.repository.SubjectRepository;
 import com.harkka.keskustelupalsta.response.ResponseHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import com.harkka.keskustelupalsta.model.Subject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class SubjectService {
-    public ResponseEntity<Object> createSubject(Subject subject) {
-        Subject newSubject = new Subject();
-        newSubject.setId(subject.getId());
-        newSubject.setSubject(subject.getSubject());
-        newSubject.setMessage(subject.getMessage());
-        newSubject.setAikaleima(subject.getAikaleima());
 
-        //DB
-        /*
+//    @Autowired
+//    SubjectRepository subjectRepository;
+
+    public ResponseEntity<Object> createSubject(Subject newSubject, SubjectRepository subjectRepository) {
+
         try {
-            Subject createdSubject = subjectRepository.save(newSubject);
-            //ToDo : Siirrä return tähän. return createdSubject;
+            System.out.println("New subject is saved to DB.");
+            return ResponseHandler.generateResponse("New subject has been saved.",
+                    HttpStatus.CREATED, subjectRepository.save(new Subject(newSubject.getSubjectname(), newSubject.getMessage())));
         } catch (Exception e) {
-            System.out.println("Jotain pielessä createSubject");
+            return ResponseHandler.generateResponse("Some failure happened in the saving new subject.",
+                    HttpStatus.INTERNAL_SERVER_ERROR, null);
         }
 
-         */
-
-        return ResponseHandler.generateResponse("Successfully", HttpStatus.CREATED, newSubject);
-        //return newSubject; //ToDo : korvaa tämä createdSubject kun kanta toimii.
     }
 
-    public ResponseEntity<Object> getSubjects() {
-        List<Subject> subjects = new ArrayList<>();
-        subjects.add(new Subject());
-        subjects.add(new Subject());
+    public ResponseEntity<Object> getSubjects(SubjectRepository subjectRepository) {
 
-        return ResponseHandler.generateResponse("Successfully", HttpStatus.OK,subjects);
+        try {
+            System.out.println("Saved subjects are retrieved from DB.");
+            return ResponseHandler.generateResponse("Subjects are.",
+                    HttpStatus.MULTI_STATUS, subjectRepository.findAll());
+        } catch (Exception e) {
+            return ResponseHandler.generateResponse("Some failure happened in the gettting subjects.",
+                    HttpStatus.INTERNAL_SERVER_ERROR, null);
+        }
+
     }
 
-    public ResponseEntity<Object> updateSubject(Subject subject) {
-        List<Subject> subjects = new ArrayList<>();
-        subjects.add(new Subject());
-        subjects.add(new Subject());
+    public ResponseEntity<Object> updateSubject(long id, Subject subject, SubjectRepository subjectRepository) {
 
-        return ResponseHandler.generateResponse("Successfully", HttpStatus.OK,subjects);
+        try {
+            System.out.println("Subject is updated from DB.");
+            Optional<Subject> subjectData = subjectRepository.findById(id);
+            Subject tmpSubject = subjectData.get();
+
+            if (subjectData.isPresent()) {
+                if(subject.getSubjectname() != null && !subject.getSubjectname().isEmpty()) {
+                    tmpSubject.setSubjectname(subject.getSubjectname());
+                }
+                if (subject.getMessage() != null && !subject.getMessage().isBlank()) {
+                    tmpSubject.setMessage(subject.getMessage());
+                }
+            }
+            return ResponseHandler.generateResponse("Subject has been updated.",
+                    HttpStatus.OK, subjectRepository.save(tmpSubject));
+        } catch (Exception e) {
+            return ResponseHandler.generateResponse("Some failure happened in the updating subject.",
+                    HttpStatus.NOT_FOUND, null);
+        }
+
     }
 
-    public ResponseEntity<Object> deleteSubject(Subject subject) {
-        List<Subject> subjects = new ArrayList<>();
-        subjects.add(new Subject());
-        subjects.add(new Subject());
+    public ResponseEntity<Object> deleteSubject(long id, SubjectRepository subjectRepository) {
 
-        return ResponseHandler.generateResponse("Successfully", HttpStatus.NO_CONTENT,subjects);
+        try {
+            System.out.println("Subject is deleted from DB.");
+            subjectRepository.deleteById(id);
+
+            return ResponseHandler.generateResponse("Subject has been deleted.",
+                    HttpStatus.NO_CONTENT, null);
+        } catch (Exception e) {
+            return ResponseHandler.generateResponse("Some failure happened in the updating subject.",
+                    HttpStatus.NOT_FOUND, null);
+        }
     }
 
 }
