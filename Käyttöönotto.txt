@@ -6,4 +6,10 @@ Backend : Spring Boot
 
 
 Front end : React
-    1.  Aja komento : git clone <repository>
+    1. Luo <projektikansio> ja siirry projektikansioon
+    2. Aja terminaalikomento : git clone https://github.com/solita-borjeba/keskustelupalsta-frontend.git
+    3. Siirry hakemistoon keskustelupalsta-frontend
+    4. Aja terminaalikomento : npm ci
+    5. Aja terminaalikomento : npm start
+
+    Odotettu tulos : localhost:3000 sivu aukeaa selaimessa.
