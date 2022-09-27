@@ -1,8 +1,9 @@
 Tietokanta : Postgre
 
 Backend : Spring Boot
-    1.  Aja komento : git clone <repository>
-    2.  Käynnistä backend IDE:llä
+    1. Luo <projektikansio> ja siirry projektikansioon
+    2. Aja komento : git clone https://github.com/solita-borjeba/keskustelupalsta-harkka-borje.git
+    2. Käynnistä backend IDE:llä
 
 
 Front end : React
