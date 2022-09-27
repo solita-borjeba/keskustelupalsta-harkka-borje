@@ -5,7 +5,6 @@ Backend : Spring Boot
     2. Aja komento : git clone https://github.com/solita-borjeba/keskustelupalsta-harkka-borje.git
     3. Siirry IDE:een ja sulje kaikki
     4. Welcome näytöltä -> klikkaa Import project ... -> valitse Maven jne.
-    4. Refresh Maven projekti (optionaalinen)
     5. Käynnistä backend IDE:llä
 
 
