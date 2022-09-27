@@ -2,10 +2,10 @@ Tietokanta : Postgre
 
 Backend : Spring Boot
     1. Luo <projektikansio> ja siirry projektikansioon
-    2. Aja komento : git clone https://github.com/solita-borjeba/keskustelupalsta-harkka-borje.git
+    2. Aja komento : git clone https://github.com/solita-borjeba/keskustelupalsta-backend.git
     3. Siirry IDE:een ja sulje kaikki
-    4. Welcome näytöltä -> klikkaa Import project ... -> valitse Maven jne.
-    5. Käynnistä backend IDE:llä
+    4. Welcome näytöltä -> klikkaa Open -> valitse alikansio keskustelupalsta-backend -> klikkaa Open
+    5. Käynnistä backend IDE:llä ("vihreä nuoli" oikealle Intellij:ssä)
 
 
 Front end : React
