@@ -1,0 +1,8 @@
+Tietokanta : Postgre
+
+Backend : Spring Boot
+    1.  Aja komento : git clone <repository>
+
+
+Front end : React
+    1.  Aja komento : git clone <repository>
